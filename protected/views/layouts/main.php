@@ -30,10 +30,10 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'Skills', 'url'=>array('/skill')),
+				array('label'=>'Skills', 'url'=>array('/skill/index')),
 				array('label'=>'Portfolio', 'url'=>array('/site/page', 'view'=>'portfolio')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Skills Cart', 'url'=>array('/cart')),
+				array('label'=>'Skills Cart', 'url'=>array('/cart/index')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

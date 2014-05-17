@@ -4,7 +4,7 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	background: #BFBFBF;
 }
 
 #page
@@ -18,8 +18,10 @@ body
 #header
 {
 	margin: 0;
-	padding: 0;
-	border-top: 3px solid #C9E0ED;
+	padding-top: 20px;
+        padding-bottom: 20px;
+	background: #66CCCC;
+	
 }
 
 #content
@@ -45,16 +47,17 @@ body
 {
 	padding: 10px 20px;
 	font-size: 200%;
+	color: #ffffff;
 }
 
 #mainmenu
 {
-	background:white url(bg.gif) repeat-x left top;
+	background:#FFBA40;
 }
 
 #mainmenu ul
 {
-	padding:6px 20px 5px 20px;
+	padding:6px 20px 5px 30px;
 	margin:0px;
 }
 
@@ -65,18 +68,18 @@ body
 
 #mainmenu ul li a
 {
-	color:#ffffff;
+	color: #000000;
 	background-color:transparent;
-	font-size:12px;
+	font-size:14px;
 	font-weight:bold;
 	text-decoration:none;
-	padding:5px 8px;
+	padding:5px 14px;
 }
 
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
-	color: #6399cd;
-	background-color:#EFF4FA;
+	color:#A64300;
+	background-color:#FFCC73;
 	text-decoration:none;
 }
 
@@ -161,7 +164,7 @@ div.search-form
 .portlet-decoration
 {
 	padding: 3px 8px;
-	background: #B7D6E7;
+	background: #006957;
 	border-left: 5px solid #6FACCF;
 }
 
@@ -171,7 +174,7 @@ div.search-form
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
-	color: #298dcd;
+	color: #FFFFFF;
 }
 
 .portlet-content
@@ -225,5 +228,6 @@ div.search-form
 
 .operations li a:hover
 {
-	background: #80CFFF;
+	background: #34D0B6;
+	color: #FFFFFF;
 }

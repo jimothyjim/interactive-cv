@@ -2,6 +2,7 @@
 /* @var $this SkillController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' - Skills';
 $this->breadcrumbs=array(
 	'Skills',
 );
@@ -13,6 +14,7 @@ $this->menu=array(
 ?>
 
 <h1>Skills</h1>
+
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
