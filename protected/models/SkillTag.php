@@ -80,7 +80,7 @@ class SkillTag extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('fk_skill_tag_link',$this->fk_skill_tag_link);
+		$criteria->compare('fk_skill_tag_link',$this->fk_skill_tag_link, true);
 		$criteria->compare('fk_tag_skill_link',$this->fk_tag_skill_link,true);
 
 		return new CActiveDataProvider($this, array(

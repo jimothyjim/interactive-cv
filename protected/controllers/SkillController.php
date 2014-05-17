@@ -31,12 +31,9 @@ class SkillController extends Controller
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
+	
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','create', 'update'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -129,10 +126,28 @@ class SkillController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Skill');
+		$criteria=new CDbCriteria(array(
+			'order'=>'name DESC',
+		));
+		if(isset($_GET['category']))
+		{
+			$criteria->addSearchCondition('category',$_GET['category']);
+		}
+	
+
+		$dataProvider=new CActiveDataProvider('Skill', array(
+			'pagination'=>array(
+				'pageSize'=>Yii::app()->params['postsPerPage'],
+			),
+			'criteria'=>$criteria,
+		));
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+
+		
+		
 	}
 
 	/**
@@ -148,6 +163,15 @@ class SkillController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+	
+	/**
+	* List models via category. Category names are unique
+	*/
+	
+	public function actionCategory($category)
+	{
+		
 	}
 
 	/**
@@ -178,3 +202,5 @@ class SkillController extends Controller
 		}
 	}
 }
+
+

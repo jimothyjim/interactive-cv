@@ -32,7 +32,7 @@
 	<br />
 	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tag')); ?>:</b>
-	<?php foreach($data->tag as $tag){ echo CHtml::encode($tag->tag . ", ");} ?>
+	<?php foreach($data->tag as $tag){ echo CHtml::Link(CHtml::encode($tag->tag . ", "), array('','tag'=>$tag->tag));} ?>
 	<br />
 	
 
