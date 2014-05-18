@@ -182,14 +182,6 @@ class SkillController extends Controller
 		));
 	}
 	
-	/**
-	* List models via category. Category names are unique
-	*/
-	
-	public function actionCategory($category)
-	{
-		
-	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

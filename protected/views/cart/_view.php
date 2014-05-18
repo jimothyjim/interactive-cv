@@ -6,13 +6,12 @@
 <div class="view">
 
 
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('category')); ?>:</b>
 	<?php echo CHtml::encode($data->category); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->name),array('view', 'id'=>$data->skill_id)); ?>
+	<?php echo CHtml::link(CHtml::encode($data->name),array( '/skill/view', 'id'=>$data->skill_id)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
@@ -32,17 +31,10 @@
 	<br />
 	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tag')); ?>:</b>
-	<?php foreach($data->tag as $tag){ echo CHtml::Link(CHtml::encode($tag->tag), array('','tag'=>$tag->tag)); echo ', ';}  ?>
+	<?php foreach($data->tag as $tag){ echo CHtml::encode($tag->tag) .", ";}  ?>
 	<br />
 
-	<b><?php echo CHtml::button('Add ' . CHtml::encode($data->name) . ' to Skills Cart', array(
-		'submit'=> array( '/cart/add', 'skillId'=>$data->skill_id)
-	));
 	
-
-
-  
-	  ?></b>
 	<br />
 	
 

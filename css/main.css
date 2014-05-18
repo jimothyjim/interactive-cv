@@ -231,3 +231,8 @@ div.search-form
 	background: #34D0B6;
 	color: #FFFFFF;
 }
+
+.important
+{
+	color:red;
+}
