@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'category'); ?>
-		<?php echo $form->textField($model,'category',array('size'=>40,'maxlength'=>40)); ?>
+		<?php echo $form->listBox($model, 'category', $model->getCategories());  ?>
 		<?php echo $form->error($model,'category'); ?>
 	</div>
 
@@ -57,8 +57,8 @@
 	
 	<div>
 		<?php echo $form->labelEx($model,'tag'); ?>
-		<?php echo $form->dropDownList($model, 'tag', CHtml::listData(
-		Tag::model()->findAll(), 'tag', 'tag'), array('multiple'=>'multiple', 'size'=>15)
+		<?php echo $form->listBox($model, 'tag', CHtml::listData(
+		Tag::model()->findAll(), 'tag', 'tag'), array('multiple'=>'multiple', 'size'=>5)
 		); ?>
 		<?php echo $form->error($model,'tag'); ?>
 	</div>

@@ -99,7 +99,16 @@ class Skill extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-
+	
+	public static function  getCategories()
+	{
+		$categoryArray = array(
+			'Education' => 'Education',
+			'Web Design' => 'Web Design'
+		);
+		return $categoryArray;
+	}
+		
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

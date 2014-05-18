@@ -99,7 +99,18 @@ class SkillController extends Controller
 		{
 			$model->attributes=$_POST['Skill'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->skill_id));
+			//Update skills and also check to see if the link already exists before trying to create a new skill_tag link
+			foreach($_POST['Skill']['tag'] as $tag){
+				$checkSkillId = $model->skill_id;
+				if(!(SkillTag::model()->findAll($condition = "fk_skill_tag_link = '$checkSkillId' AND fk_tag_skill_link = '$tag'")))
+				{ 
+					$skillTag = new SkillTag;
+					$skillTag->fk_skill_tag_link = $model->skill_id;
+					$skillTag->fk_tag_skill_link = $tag;
+					if (!$skillTag->save()) print_r($skillTag->errors);
+					}
+			}
+			$this->redirect(array('view','id'=>$model->skill_id));
 		}
 
 		$this->render('update',array(
