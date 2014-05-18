@@ -100,6 +100,9 @@ class Skill extends CActiveRecord
 		));
 	}
 	
+	/**
+	 *Returns an array of the possible skill categories
+	 */
 	public static function  getCategories()
 	{
 		$categoryArray = array(
@@ -107,6 +110,26 @@ class Skill extends CActiveRecord
 			'Web Design' => 'Web Design'
 		);
 		return $categoryArray;
+	}
+	
+	/** This is used to find the skill_id of any skills that have been tagged with a specific tag
+	* This returned array is generally used as a search criteria to return full skill models 
+	* @param integer $tag name of the tag we are trying to filter by
+	* @return array of skill_id
+	*/
+	
+	public static function getSkillIdArrayByTag($tag)
+	{
+		$skillTag = SkillTag::model()->findAll($condition = "fk_tag_skill_link = '$tag'");
+		$skillIdIndexArray=[]; 
+		$count=0;
+		foreach($skillTag as $skill)
+		{
+			$count++;
+			$skillIdIndexArray[$count] = $skill->fk_skill_tag_link;
+		}
+		
+		return $skillIdIndexArray;
 	}
 		
 	/**

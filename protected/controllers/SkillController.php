@@ -147,12 +147,8 @@ class SkillController extends Controller
 		//This solution works but it's an eyesore. There must be a better way
 		if(isset($_GET['tag']))
 		{
-			$tag = $_GET['tag'];
-			$skillTag = SkillTag::model()->findAll($condition = "fk_tag_skill_link = '$tag'");
-			$conditionString = '';
-			foreach($skillTag as $skill){$conditionString = $conditionString . 'skill_id =' . $skill->fk_skill_tag_link . ' OR ';}
-			$conditionString = substr($conditionString,0, -4);
-			$criteria->condition=$conditionString;
+			$skillIdIndexArray =Skill::model()->getSkillIdArrayByTag($_GET['tag']);
+			$criteria->addInCondition('skill_id', $skillIdIndexArray);
 		}
 	
 
