@@ -131,6 +131,8 @@ class Skill extends CActiveRecord
 		
 		return $skillIdIndexArray;
 	}
+	
+	
 		
 	/**
 	 * Returns the static model of the specified AR class.

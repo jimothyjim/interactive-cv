@@ -87,6 +87,18 @@ class SkillTag extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	/**
+	 * This checks to see if an entry in the skill_tag table exists
+	 * Used to avoid trying to write duplicate entries to the database
+	 *@param integer $skillid an id of a skill
+	 *@param string $tag a tag for skills
+	 *@return bool confirming or denying existence
+	 */
+	public static function checkExists($skillId, $tag)
+	{
+		return SkillTag::model()->findAll($condition = "fk_skill_tag_link = '$skillId' AND fk_tag_skill_link = '$tag'");
+	}
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -94,6 +106,9 @@ class SkillTag extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return SkillTag the static model class
 	 */
+	 
+	
+	
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
