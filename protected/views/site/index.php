@@ -4,17 +4,21 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<h1>Welcome To My (Simon Freeman) Portfolio Site!</h1>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+<p>
+	This site was created to supplement my C.V and to showcase some of the things I've done. As this site was created
+	as a showcase, some of the features are a bit superflous. I can also assure you I didn't use this to write my actual
+	application! Some design choices were made to make sure I could at least generate the C.V I wrote, and while technically
+	functional, other generated C.Vs may be somewhat lacking in the writing departmernt. Please feel free to generate
+	a C.V based on my skills, or check out my portfolio, or even view all the non-sensitive source code for this site.
+</p>
+<p>
+	Due to the time constraints needed to create this in time for the application deadline, some areas are lacking a little polish.
+	Despite this, all the necessary functionality is in place and great care was taken to avoid any bugs. I will continue to improve
+	this site for a while after sending in my application.
+</p>
+<p>
+	To speed things up, I have made these quick add functions
+</p>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
-
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>

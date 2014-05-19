@@ -33,8 +33,8 @@
 	<br />
 	
 	<b><?php echo CHtml::button('Remove "' . CHtml::encode($data->name) . '" from the Skills Cart', array(
-		'submit'=> array( '/cart/remove', 'remove'=>$data->skill_id)
-	)); ?> </b>
+		'submit'=> array( '/cart/remove', 'remove'=>$data->skill_id), 'confirm'=>'confirm')); 
+	?> </b>
 
 	
 	<br />
