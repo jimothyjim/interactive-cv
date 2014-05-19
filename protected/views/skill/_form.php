@@ -39,7 +39,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'job_relevance'); ?>
-		<?php echo $form->textField($model,'job_relevance'); ?>
+		<?php echo $form->listBox($model,'job_relevance',skill::model()->getJobRelevance(), array('size'=>3)); ?>
 		<?php echo $form->error($model,'job_relevance'); ?>
 	</div>
 

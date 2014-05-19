@@ -18,7 +18,7 @@ class CartController extends Controller
 		
 		$dataProvider=new CActiveDataProvider('Skill', array(
 			'pagination'=>array(
-				'pageSize'=>Yii::app()->params['postsPerPage'],
+				'pageSize'=>'5',
 			),
 			'criteria'=>$criteria,
 		));

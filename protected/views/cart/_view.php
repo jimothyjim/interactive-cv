@@ -32,8 +32,8 @@
 	<?php foreach($data->tag as $tag){ echo CHtml::encode($tag->tag) .", ";}  ?>
 	<br />
 	
-	<b><?php echo CHtml::button('Remove "' . CHtml::encode($data->name) . '" from the Skills Cart', array(
-		'submit'=> array( '/cart/remove', 'remove'=>$data->skill_id), 'confirm'=>'confirm')); 
+	<b><?php echo CHtml::link('Remove "' . CHtml::encode($data->name) . '" from the Skills Cart', array(
+		 '/cart/remove', 'remove'=>$data->skill_id)); 
 	?> </b>
 
 	

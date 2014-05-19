@@ -140,9 +140,11 @@ div.form .rememberMe label
 div.view
 {
 	padding: 10px;
-	margin: 10px 0;
+	margin: 10px 10px;
 	border: 1px solid #C9E0ED;
 }
+
+
 
 div.breadcrumbs
 {
@@ -176,7 +178,7 @@ div.search-form
 
 .portlet-title
 {
-	font-size: 12px;
+	font-size: 16px;
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
@@ -219,7 +221,7 @@ div.search-form
 
 .operations li a
 {
-	font: bold 12px Arial;
+	font: bold 15px Arial;
 	color: #0066A4;
 	display: block;
 	padding: 2px 0 2px 8px;
@@ -247,6 +249,7 @@ div.search-form
 {	
 	display: block;
 	margin:auto;
+	clear: both;
 }
 
 h2:nth-child(even)
@@ -260,7 +263,7 @@ h2:nth-child(even)
 }
 .portfolioSegment:nth-child(even)
 {
-	background-color:#FFD173;
+	background-color:#FFE4C4;
 	font-weight:bold;
 	color:black;
 	border:none;

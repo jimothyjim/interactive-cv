@@ -31,8 +31,8 @@ class Skill extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('category, name, description, job_relevance, cv_prirotiy, cv_text, tag', 'required'),
-			array('job_relevance, cv_prirotiy', 'numerical', 'integerOnly'=>true),
-			array('category, name', 'length', 'max'=>40),
+			array(' cv_prirotiy', 'numerical', 'integerOnly'=>true),
+			array('job_relevance,category, name', 'length', 'max'=>40),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('skill_id, category, name, description, job_relevance, cv_prirotiy, cv_text', 'safe', 'on'=>'search'),
@@ -117,7 +117,6 @@ class Skill extends CActiveRecord
 	* @param integer $tag name of the tag we are trying to filter by
 	* @return array of skill_id
 	*/
-	
 	public static function getSkillIdArrayByTag($tag)
 	{
 		$skillTag = SkillTag::model()->findAll($condition = "fk_tag_skill_link = '$tag'");
@@ -130,6 +129,15 @@ class Skill extends CActiveRecord
 		}
 		
 		return $skillIdIndexArray;
+	}
+	
+	/** 
+	 *List possible job relevances
+	 */
+	public static function getJobRelevance()
+	{
+		$relevances = array('high', 'medium', 'low');
+		return $relevances;
 	}
 	
 	

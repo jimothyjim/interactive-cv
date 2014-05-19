@@ -31,9 +31,9 @@
 	<?php foreach($data->tag as $tag){ echo CHtml::Link(CHtml::encode($tag->tag), array('','tag'=>$tag->tag)); echo ', ';}  ?>
 	<br />
 
-	<b><?php echo CHtml::button('Add "' . CHtml::encode($data->name) . '" to Skills Cart', array(
-		'submit'=> array( '/cart/add', 'skillId'=>$data->skill_id)
-	));
+	<b><?php echo CHtml::link('Add "' . CHtml::encode($data->skill_id) . '" to Skills Cart', array(
+		'cart/add', 'skillId'=>$data->skill_id)
+	);
 	
 
 
