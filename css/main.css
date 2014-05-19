@@ -236,3 +236,8 @@ div.search-form
 {
 	color:red;
 }
+
+.center
+{	
+	display: block;
+	margin:auto;
