@@ -3,7 +3,8 @@ body
 	margin: 0;
 	padding: 0;
 	color: #555;
-	font: normal 10pt Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	font-family: Verdana, Geneva, sans-serif;
 	background: #BFBFBF;
 }
 
@@ -70,7 +71,7 @@ body
 {
 	color: #000000;
 	background-color:transparent;
-	font-size:14px;
+	font-size:16px;
 	font-weight:bold;
 	text-decoration:none;
 	padding:5px 14px;
@@ -81,6 +82,11 @@ body
 	color:#A64300;
 	background-color:#FFCC73;
 	text-decoration:none;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	font-weight:bold;
 }
 
 div.flash-error, div.flash-notice, div.flash-success
@@ -241,3 +247,23 @@ div.search-form
 {	
 	display: block;
 	margin:auto;
+}
+
+h2:nth-child(even)
+{
+	font-weight:bold;
+
+}
+.portfolioSegment 
+{
+     
+}
+.portfolioSegment:nth-child(even)
+{
+	background-color:#FFD173;
+	font-weight:bold;
+	color:black;
+	border:none;
+	margin: 0px;
+	padding: 0px;
+}

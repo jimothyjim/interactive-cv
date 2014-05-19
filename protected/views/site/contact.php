@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+All my details are enclosed on my C.V, however, this form can also be used to reach me.
 </p>
 
 <div class="form">
