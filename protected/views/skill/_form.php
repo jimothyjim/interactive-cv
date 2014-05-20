@@ -50,7 +50,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'cv_text'); ?>
+		<?php echo $form->labelEx($model,'cv_text' . ' using HTML tags where needed '); ?>
 		<?php echo $form->textArea($model,'cv_text',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'cv_text'); ?>
 	</div>

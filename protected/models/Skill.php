@@ -106,10 +106,10 @@ class Skill extends CActiveRecord
 	public static function  getCategories()
 	{
 		$categoryArray = array(
-			'Education'=> 'Education',
+			'education'=> 'Education',
 			'web_design_skills' =>' Web Development Skills',
 			'software_development' =>'Software Development' ,
-			'general_experience' => 'General Experience',
+			'general_computing' => 'General Computing',
 			'relevant_experience'=>'Relevant Experience',
 			'additional_skills_and_interests'=>'Additional Skills and Interests' 
 			

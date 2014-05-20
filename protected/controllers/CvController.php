@@ -5,20 +5,15 @@ class CvController extends Controller
 	public function actionIndex()
 	{
 		$criteria=new CDbCriteria(array(
-			'order'=>'category DESC',
+			'order'=>'category DESC, cv_priority ASC',
 		));
 		
 		$criteria->addInCondition('skill_id', Yii::app()->session['cartSkills']);
+		$cvData = Skill::model()->findAll($criteria);
 		
-		$dataProvider=new CActiveDataProvider('Skill', array(
-			'pagination'=>array(
-				'pageSize'=>'5',
-			),
-			'criteria'=>$criteria,
+		$this->render('index',array(
+			'cvData'=>$cvData
 		));
-		
-		var_dump($dataProvider);
-		$this->render('index');
 		
 		
 	}
