@@ -37,7 +37,7 @@ while($count < $tagAmount)
 		'name',
 		'description',
 		'job_relevance',
-		'cv_prirotiy',
+		'cv_priority',
 		'cv_text',
 		array(
 		'name' => 'Tags',

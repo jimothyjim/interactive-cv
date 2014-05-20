@@ -11,10 +11,11 @@ $this->menu=array(
 	array('label'=>'Create Skill', 'url'=>array('create'), 'visible'=>Yii::app()->user->name=='admin' ),
 	array('label'=>'Manage Skill', 'url'=>array('admin'), 'visible'=>Yii::app()->user->name=='admin' ),
 	array('label'=>'Education', 'url'=>array('','category'=>'education')),
-	array('label'=>'Web Design', 'url'=>array('','category'=>'web_design')),
+	array('label'=>'Web Development Sklls', 'url'=>array('','category'=>'web_design')),
 	array('label'=>'Software Development', 'url'=>array('','category'=>'software_development')),
-	array('label'=>'Computing', 'url'=>array('','category'=>'computing')),
+	array('label'=>'General Computing', 'url'=>array('','category'=>'computing')),
 	array('label'=>'Additional Skills and Interests', 'url'=>array('','category'=>'additional_skills_and_interests')),
+	array('label'=>'Experience', 'url'=>array('','category'=>'experience')),
 );
 ?>
 

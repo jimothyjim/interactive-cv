@@ -62,7 +62,7 @@ class SkillController extends Controller
 		$model=new Skill;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['Skill']))
 		{
@@ -93,7 +93,7 @@ class SkillController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Skill']))
 		{

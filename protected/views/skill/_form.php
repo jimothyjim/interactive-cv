@@ -12,7 +12,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -39,14 +39,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'job_relevance'); ?>
-		<?php echo $form->listBox($model,'job_relevance',skill::model()->getJobRelevance(), array('size'=>3)); ?>
+		<?php echo $form->listBox($model,'job_relevance',skill::model()->getJobRelevance(), array('prompt' => 'Choose One','size'=>3)); ?>
 		<?php echo $form->error($model,'job_relevance'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'cv_prirotiy'); ?>
-		<?php echo $form->textField($model,'cv_prirotiy'); ?>
-		<?php echo $form->error($model,'cv_prirotiy'); ?>
+		<?php echo $form->labelEx($model,'cv_priority'); ?>
+		<?php echo $form->textField($model,'cv_priority'); ?>
+		<?php echo $form->error($model,'cv_priority'); ?>
 	</div>
 
 	<div class="row">
@@ -58,14 +58,17 @@
 	<div>
 		<?php echo $form->labelEx($model,'tag'); ?>
 		<?php echo $form->listBox($model, 'tag', CHtml::listData(
-		Tag::model()->findAll(), 'tag', 'tag'), array('multiple'=>'multiple', 'size'=>5)
+		Tag::model()->findAll(), 'tag', 'tag'), array('multiple'=>'multiple', 'size'=>5, 'prompt' => 'Choose Many')
 		); ?>
 		<?php echo $form->error($model,'tag'); ?>
 	</div>
+	
+	
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
+	
 
 <?php $this->endWidget(); ?>
 

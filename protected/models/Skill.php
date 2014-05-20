@@ -8,8 +8,8 @@
  * @property string $category
  * @property string $name
  * @property string $description
- * @property integer $job_relevance
- * @property integer $cv_prirotiy
+ * @property string $job_relevance
+ * @property integer $cv_priority
  * @property string $cv_text
  */
 class Skill extends CActiveRecord
@@ -30,12 +30,12 @@ class Skill extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('category, name, description, job_relevance, cv_prirotiy, cv_text, tag', 'required'),
-			array(' cv_prirotiy', 'numerical', 'integerOnly'=>true),
+			array('category, name, description, job_relevance, cv_priority, cv_text, tag', 'required'),
+			array(' cv_priority', 'numerical', 'integerOnly'=>true),
 			array('job_relevance,category, name', 'length', 'max'=>40),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('skill_id, category, name, description, job_relevance, cv_prirotiy, cv_text', 'safe', 'on'=>'search'),
+			array('skill_id, category, name, description, job_relevance, cv_priority, cv_text', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,7 +63,7 @@ class Skill extends CActiveRecord
 			'name' => 'Name',
 			'description' => 'Description',
 			'job_relevance' => 'Job Relevance',
-			'cv_prirotiy' => 'Cv Prirotiy',
+			'cv_priority' => 'Cv Priority',
 			'cv_text' => 'Cv Text',
 			'tag' => 'Tags'
 		);
@@ -92,7 +92,7 @@ class Skill extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('job_relevance',$this->job_relevance);
-		$criteria->compare('cv_prirotiy',$this->cv_prirotiy);
+		$criteria->compare('cv_priority',$this->cv_priority);
 		$criteria->compare('cv_text',$this->cv_text,true);
 
 		return new CActiveDataProvider($this, array(
@@ -106,8 +106,14 @@ class Skill extends CActiveRecord
 	public static function  getCategories()
 	{
 		$categoryArray = array(
-			'Education' => 'Education',
-			'Web Design' => 'Web Design'
+			'Education'=> 'Education',
+			'web_design_skills' =>' Web Development Skills',
+			'software_development' =>'Software Development' ,
+			'general_experience' => 'General Experience',
+			'relevant_experience'=>'Relevant Experience',
+			'additional_skills_and_interests'=>'Additional Skills and Interests' 
+			
+			
 		);
 		return $categoryArray;
 	}
@@ -133,10 +139,11 @@ class Skill extends CActiveRecord
 	
 	/** 
 	 *List possible job relevances
+
 	 */
 	public static function getJobRelevance()
 	{
-		$relevances = array('high', 'medium', 'low');
+		$relevances = array('high'=>'high', 'medium'=>'medium', 'low'=>'low');
 		return $relevances;
 	}
 	

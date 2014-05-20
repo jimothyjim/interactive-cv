@@ -22,6 +22,12 @@ $this->widget('zii.widgets.CListView', array(
 	'itemView'=>'_view',
 )); ?>
 
-<b><?php echo CHtml::button('Remove everything', array(
-		'submit'=> array( '/cart/empty', 'empty'=>'true'),'confirm'=>'This will remove everything from your cart, contine?',
-		'class'=>'center')); ?> </b>
+<?php echo CHtml::button('Remove everything', array(
+	'submit'=> array( '/cart/empty', 'empty'=>'true'),'confirm'=>'This will remove everything from your cart, contine?',
+	'class'=>'center')); ?> 
+	
+<br />
+
+<?php echo CHtml::button('Generate C.V', array(
+	'submit'=> array( '/cv/index'),
+	'class'=>'center')); ?> 	

@@ -37,8 +37,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'cv_prirotiy'); ?>
-		<?php echo $form->textField($model,'cv_prirotiy'); ?>
+		<?php echo $form->label($model,'cv_priority'); ?>
+		<?php echo $form->textField($model,'cv_priority'); ?>
 	</div>
 
 	<div class="row">
