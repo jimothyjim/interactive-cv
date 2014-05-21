@@ -144,7 +144,7 @@ class SkillController extends Controller
 		{
 			$criteria->addSearchCondition('category',$_GET['category']);
 		}
-		//This solution works but it's an eyesore. There must be a better way
+		//This solution works though there may be a way without need to query the taglink table
 		if(isset($_GET['tag']))
 		{
 			$skillIdIndexArray =Skill::model()->getSkillIdArrayByTag($_GET['tag']);

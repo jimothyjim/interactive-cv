@@ -11,11 +11,11 @@ $this->menu=array(
 	array('label'=>'Create Skill', 'url'=>array('create'), 'visible'=>Yii::app()->user->name=='admin' ),
 	array('label'=>'Manage Skill', 'url'=>array('admin'), 'visible'=>Yii::app()->user->name=='admin' ),
 	array('label'=>'Education', 'url'=>array('','category'=>'education')),
-	array('label'=>'Web Development Sklls', 'url'=>array('','category'=>'web_design')),
-	array('label'=>'Software Development', 'url'=>array('','category'=>'software_development')),
-	array('label'=>'General Computing', 'url'=>array('','category'=>'computing')),
-	array('label'=>'Additional Skills and Interests', 'url'=>array('','category'=>'additional_skills_and_interests')),
-	array('label'=>'Experience', 'url'=>array('','category'=>'experience')),
+	array('label'=>'Web Development Skills', 'url'=>array('','category'=>'Web Development Skills')),
+	array('label'=>'Software Development', 'url'=>array('','category'=>'Software Development')),
+	array('label'=>'General Computing', 'url'=>array('','category'=>'General Computing')),
+	array('label'=>'Additional Skills and Interests', 'url'=>array('','category'=>'Additional Skills and Interests')),
+	array('label'=>'Work Experience', 'url'=>array('','category'=>'Work Experience')),
 );
 ?>
 
@@ -26,6 +26,25 @@ $this->menu=array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>
+
+<?php
+
+$currentCategory = 'none';
+$currentTag = 'none';
+
+if(isset($_GET['category']))
+{
+	$currentCategory =$_GET['category'];
+}
+if(isset($_GET['tag']))
+{
+	$currentTag =$_GET['tag'];
+}
+echo CHtml::button('Add all these skills to the skills cart', array(
+	'submit'=> array( '/cart/addMany', 'category'=>$currentCategory, 'tag'=>$currentTag),'confirm'=>'This will add everything here to your cart, contine?',
+	'class'=>'center')); ?> 
+	
+<br />
 
 
   

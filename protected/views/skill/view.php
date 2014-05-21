@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Skill #<?php echo $model->name; ?></h1>
+<h1>View Skill - <?php echo $model->name; ?></h1>
 <?php 
 // Make my tag array array make a string as I'm not sure how to implode it
 $tag = $model->tag;

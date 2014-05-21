@@ -27,12 +27,21 @@ class CartController extends Controller
 		$skillChange = [];
 		
 		//Creates data for index about the skill that was just added
+		//if it was miltiple skills, it jsut says added multiple for the moment
 		if(isset($_GET['justAdded']))
 		{
-			$skillChange['action'] = 'added';
-			$skillAddedModel =  Skill::model()->findByPk($_GET['justAdded']);
-			$skillChange['skillName'] =$skillAddedModel->name;
-			$skillChange['skillId']= $skillAddedModel->skill_id;
+			if($_GET['justAdded']=='multiple')
+			{
+				$skillChange['skillName'] = 'multiple things';
+				$skillChange['skillId']='#';
+			}
+			else
+			{
+				$skillChange['action'] = 'added';
+				$skillAddedModel =  Skill::model()->findByPk($_GET['justAdded']);
+				$skillChange['skillName'] =$skillAddedModel->name;
+				$skillChange['skillId']= $skillAddedModel->skill_id;
+			}
 		}
 
 		//Creates data for index about the skill that was just removed
@@ -95,10 +104,57 @@ class CartController extends Controller
 		$this->redirect(array('index','justAdded'=>$_GET['skillId']));
 	}
 	
+	/** 
+	 *Deals with adding multiple skills at once, filters by category and tags
+
+	 */
+	 
+	public function actionAddMany()
+	{
+		$criteria=new CDbCriteria(array(
+		));
+		if($_GET['category']!='none')
+		{
+			$category = $_GET['category'];
+			$criteria->addCondition('category="' . $category .'"');
+
+		}
+		
+		if($_GET['tag']!='none')
+		{
+			$skillIdIndexArray =Skill::model()->getSkillIdArrayByTag($_GET['tag']);
+			$criteria->addInCondition('skill_id', $skillIdIndexArray);
+
+		}
+		
+		$skills = Skill::model()->findAll($criteria);
+		
+		//Yii can't handle adding to an array with it's session thing
+		//so instead copy it to a tempSessionArray, add a new array item and 
+		//then overwrite that session variable with the modified tempSessionArray
+		//Also need to initiallize the session variable if it doesn't already exist
+
+		if(!isset(Yii::app()->session['cartSkills']))
+		{
+			Yii::app()->session['cartSkills']= array();
+		}
+		
+		foreach($skills as $skill)
+		{
+			$tempSessionArray = Yii::app()->session['cartSkills'];
+			//check to see if the item is already in the cart before adding it to the array
+			if(array_search($skill->skill_id, $tempSessionArray)===false)
+			{
+				$tempSessionArray[]=$skill->skill_id;
+			}
+			Yii::app()->session['cartSkills']= $tempSessionArray;
+		}
+		
+		$this->redirect(array('index','justAdded'=>'multiple'));
+	}
 	/**
 	 *Removes a skill from the cart by removing its skill_id from the session
 	 */
-
 	public function actionRemove()
 	{
 
