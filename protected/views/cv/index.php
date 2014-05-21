@@ -5,8 +5,9 @@ $this->breadcrumbs=array(
 	'Cv',
 );
 ?>
+<div id ="cv">
 <h1> Simon Freeman </h1>
-<p> Contact Details Redacted for Online C.V </p>
+<p> Contact Details Redacted for Online C.V </p>	
 <p>
 	An enthusiastic Internet Computing graduate from the University of Glamorgan, willing to relocate for a career in development. 
 	Combining a talent for problem solving with an ability to communicate effectively, programming within a team is a natural fit.
@@ -60,13 +61,17 @@ foreach($cvData as $skill)
 //All u
 if($education!='')
 {
-	echo "<h2>Education</h2>
+	echo '<h2>Education</h2>
 		<h3>2008 - 2011   University of Glamorgan</h3>
 		<h4>2:1 BSc Internet Computing</h4>
-		<ul>";
+		<ul>';
 	echo $education;
-	echo "</ul>";
-	echo $education1;
+	echo '</ul>';
+	if($education1!='')
+	{
+		echo '<h3>2001-2008    Launceston College</h3>';
+		echo $education1;
+	}
 	}	
 
 if($software !='')
@@ -98,3 +103,6 @@ if($interests!='')
 	echo "<h2>Additional Skills and Interests</h2>";
 	echo $interests;
 }
+
+?>
+</div>

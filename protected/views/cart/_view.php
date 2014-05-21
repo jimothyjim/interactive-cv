@@ -31,9 +31,9 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tag')); ?>:</b>
 	<?php foreach($data->tag as $tag){ echo CHtml::encode($tag->tag) .", ";}  ?>
 	<br />
-	
-	<b><?php echo CHtml::link('Remove "' . CHtml::encode($data->name) . '" from the Skills Cart', array(
-		 '/cart/remove', 'remove'=>$data->skill_id)); 
+	<br />
+	<b><?php echo CHtml::link('Remove from the Skills Cart', array(
+		 '/cart/remove', 'remove'=>$data->skill_id),array('class'=>'button')); 
 	?> </b>
 
 	

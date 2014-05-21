@@ -185,6 +185,16 @@ class CartController extends Controller
 		Yii::app()->session['cartSkills']= array();
 		$this->redirect(array('index','empty'=>'true'));
 	}
+	
+	/**
+	 * This fills the cart with skills used in my actual CV
+	 */
+	public function actionAddPresetCv()
+	{
+	      $skillIdArray = [34,35,36,37,38,39,40,41,42,43,44,45,46];
+	      Yii::app()->session['cartSkills']=$skillIdArray;
+	      $this->redirect(array('index','justAdded'=>'multiple'));
+	}
 
 	// Uncomment the following methods and override them if needed
 	/*

@@ -2,7 +2,7 @@ body
 {
 	margin: 0;
 	padding: 0;
-	color: #555;
+	color: black;
 	font-size: 14px;
 	font-family: Verdana, Geneva, sans-serif;
 	background: #BFBFBF;
@@ -27,7 +27,7 @@ body
 
 #content
 {
-    padding: 20px;
+	padding: 20px;
 }
 
 #sidebar
@@ -87,7 +87,15 @@ body
 h1,h2,h3,h4,h5,h6
 {
 	font-weight:bold;
+	padding:1px 15px 1px 15px;
+
 }
+
+p
+{
+	padding:1px 15px 1px 15px;
+}
+  
 
 div.flash-error, div.flash-notice, div.flash-success
 {
@@ -257,16 +265,61 @@ h2:nth-child(even)
 	font-weight:bold;
 
 }
+
 .portfolioSegment 
 {
      
 }
+
 .portfolioSegment:nth-child(even)
 {
-	background-color:#FFE4C4;
+	background-color:#FEE8D6;
 	font-weight:bold;
 	color:black;
 	border:none;
 	margin: 0px;
 	padding: 0px;
+}
+
+.button
+{
+	border-radius: 7px;
+	border: 1px black solid;
+	-moz-border-radius: 7px;
+	-webkit-border-radius:7px;
+	background: #e6e6e6;
+	padding:5px;
+	text-decoration:none;
+	color:black;
+	margin-left:10px;
+	font-weight:bold;
+}
+
+#cv h1
+{
+	background-color:#BDBDBD;
+	border: 1px black solid;
+}
+
+#cv h2
+{
+	margin-left:10px;
+	display: block;
+	background-color:#FEE8D6;
+	border: 1px black solid;
+}
+
+#cv h3
+{
+	margin-left:20px;
+}
+
+#cv h4
+{
+	margin-left:30px;
+}
+
+#cv li
+{
+	margin-left:40px;
 }

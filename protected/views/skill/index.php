@@ -20,13 +20,6 @@ $this->menu=array(
 ?>
 
 <h1>Skills</h1>
-
-
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
-
 <?php
 
 $currentCategory = 'none';
@@ -40,10 +33,19 @@ if(isset($_GET['tag']))
 {
 	$currentTag =$_GET['tag'];
 }
-echo CHtml::button('Add all these skills to the skills cart', array(
-	'submit'=> array( '/cart/addMany', 'category'=>$currentCategory, 'tag'=>$currentTag),'confirm'=>'This will add everything here to your cart, contine?',
-	'class'=>'center')); ?> 
-	
+echo CHtml::link('Add all these skills to the skills cart', array(
+	 '/cart/addMany', 'category'=>$currentCategory, 'tag'=>$currentTag), array('confirm'=>'This will add everything here to your cart, contine?',
+	'class'=>'button')); ?> 
+
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+)); ?>
+
+// <?php
+echo CHtml::link('Add all these skills to the skills cart', array(
+	 '/cart/addMany', 'category'=>$currentCategory, 'tag'=>$currentTag), array('confirm'=>'This will add everything here to your cart, contine?',
+	'class'=>'button')); ?> 
 <br />
 
 

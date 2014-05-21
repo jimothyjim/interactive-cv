@@ -30,15 +30,11 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tag')); ?>:</b>
 	<?php foreach($data->tag as $tag){ echo CHtml::Link(CHtml::encode($tag->tag), array('','tag'=>$tag->tag)); echo ', ';}  ?>
 	<br />
+	<br />
 
-	<b><?php echo CHtml::link('Add to Skills Cart', array(
-		'cart/add', 'skillId'=>$data->skill_id)
-	);
-	
-
-
-  
-	  ?></b>
+	<?php echo CHtml::link('Add to Skills Cart', array(
+		'cart/add', 'skillId'=>$data->skill_id), array('class'=>'button')
+	); ?>
 	<br />
 	
 
