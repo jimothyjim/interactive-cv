@@ -42,7 +42,7 @@ echo CHtml::link('Add all these skills to the skills cart', array(
 	'itemView'=>'_view',
 )); ?>
 
-// <?php
+<?php
 echo CHtml::link('Add all these skills to the skills cart', array(
 	 '/cart/addMany', 'category'=>$currentCategory, 'tag'=>$currentTag), array('confirm'=>'This will add everything here to your cart, contine?',
 	'class'=>'button')); ?> 

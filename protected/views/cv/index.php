@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 <p>
 	An enthusiastic Internet Computing graduate from the University of Glamorgan, willing to relocate for a career in development. 
 	Combining a talent for problem solving with an ability to communicate effectively, programming within a team is a natural fit.
-	Online portfolio available at DOMAIN HERE
+	Online portfolio available at www.spfreeman.net
 </p>
 <?php 
 $education='';
@@ -35,17 +35,17 @@ foreach($cvData as $skill)
 				$education .= '<li>' . $skill->cv_text . '</li> ';
 			}
 			break;
-		case'Software Sevelopment':
+		case'Software Development':
 			
-			$software .= $skill->cv_text . ' ';
+			$software .=  '<p>' . $skill->cv_text . '</p> ';
 			break;
-		case'Web Development':
+		case'Web Development Skills':
 			
-			$web .= $skill->cv_text . ' ';
+			$web .= '<p>' . $skill->cv_text . '</p>';
 			break;
-		case'General Development':
+		case'General Computing':
 			
-			$computing .= $skill->cv_text . ' ';
+			$computing .= '<p>' . $skill->cv_text . '</p> ';
 			break;
 		case'Work Experience':
 			
@@ -53,7 +53,7 @@ foreach($cvData as $skill)
 			break;
 		case'Additional Skills and Interests':
 			
-			$interests .= $skill->cv_text . ' ';
+			$interests .=   $skill->cv_text ;
 			break;
 	}
 }

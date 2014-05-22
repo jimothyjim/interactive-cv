@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Skill', 'url'=>array('index')),
-	array('label'=>'Create Skill', 'url'=>array('create')),
-	array('label'=>'Update Skill', 'url'=>array('update', 'id'=>$model->skill_id)),
-	array('label'=>'Delete Skill', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->skill_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Skill', 'url'=>array('admin')),
+	array('label'=>'List Skill', 'url'=>array('index'), 'visible'=>Yii::app()->user->name=='admin'),
+	array('label'=>'Create Skill', 'url'=>array('create'), 'visible'=>Yii::app()->user->name=='admin'),
+	array('label'=>'Update Skill', 'url'=>array('update', 'id'=>$model->skill_id),'visible'=>Yii::app()->user->name=='admin'),
+	array('label'=>'Delete Skill', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->skill_id),'confirm'=>'Are you sure you want to delete this item?'),'visible'=>Yii::app()->user->name=='admin'),
+	array('label'=>'Manage Skill', 'url'=>array('admin'),'visible'=>Yii::app()->user->name=='admin'),
 );
 ?>
 

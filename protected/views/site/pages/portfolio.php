@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 		This website was created completely from scratch. The goal was to create a clean and simple website that 
 		could be used for advertising and for customer feedback. A few areas with Lorem Ipsum remain where the 
 		relevant information was not provided to me. 
-		<?php echo CHtml::link('It can be viewed here','http://mydomain.com/stenlakes', array('target'=>'_blank')); ?>
+		<?php echo CHtml::link('It can be viewed here','http://spfreeman.net/stenlakes', array('target'=>'_blank')); ?>
 	</p>
 </div>
 <div class="portfolioSegment"> 
@@ -32,4 +32,3 @@ $this->breadcrumbs=array(
 		array('target'=>'_blank'));?>
 	.</p>
 </div>
-  

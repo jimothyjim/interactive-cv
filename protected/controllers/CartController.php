@@ -24,7 +24,7 @@ class CartController extends Controller
 		));
 		
 		//Declare it as empty to avoid an error if it's not passing any real data
-		$skillChange = [];
+		$skillChange=array();
 		
 		//Creates data for index about the skill that was just added
 		//if it was miltiple skills, it jsut says added multiple for the moment
@@ -191,9 +191,35 @@ class CartController extends Controller
 	 */
 	public function actionAddPresetCv()
 	{
-	      $skillIdArray = [34,35,36,37,38,39,40,41,42,43,44,45,46];
+	      $skillIdArray = array(34,35,36,37,38,39,40,41,42,43,44,45,46);
 	      Yii::app()->session['cartSkills']=$skillIdArray;
 	      $this->redirect(array('index','justAdded'=>'multiple'));
+	}
+
+        /**
+         * Adds all skills to the cart
+         */
+	public function actionAddAll()
+	{
+		$skills = Skill::model()->findAll();
+		if(!isset(Yii::app()->session['cartSkills']))
+		{
+			Yii::app()->session['cartSkills']= array();
+		}
+		
+		foreach($skills as $skill)
+		{
+			$tempSessionArray = Yii::app()->session['cartSkills'];
+			//check to see if the item is already in the cart before adding it to the array
+			if(array_search($skill->skill_id, $tempSessionArray)===false)
+			{
+				$tempSessionArray[]=$skill->skill_id;
+			}
+			Yii::app()->session['cartSkills']= $tempSessionArray;
+		}
+		
+		$this->redirect(array('index','justAdded'=>'multiple'));
+
 	}
 
 	// Uncomment the following methods and override them if needed

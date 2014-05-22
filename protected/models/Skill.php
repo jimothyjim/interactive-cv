@@ -125,8 +125,8 @@ class Skill extends CActiveRecord
 	*/
 	public static function getSkillIdArrayByTag($tag)
 	{
-		$skillTag = SkillTag::model()->findAll($condition = "fk_tag_skill_link = '$tag'");
-		$skillIdIndexArray=[]; 
+		$skillTag = SkillTag::model()->findAll($condition = 'fk_tag_skill_link = $tag');
+		
 		$count=0;
 		foreach($skillTag as $skill)
 		{
