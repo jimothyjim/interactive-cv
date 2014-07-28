@@ -15,13 +15,11 @@ $this->breadcrumbs=array(
 <h2> The skills listed here will be used to generate a C.V if you click "Generate C.V" at the bottom of the page. </h2>
 <?php echo CHtml::link('Remove everything',array(
 	'/cart/empty', 'empty'=>'true'),array('confirm'=>'This will remove everything from your cart, contine?',
-	'class'=>'button'));  
+	'class'=>'button')); ?> 
 	
-echo CHtml::link('Add actual CV skills to cart', array(
-	 '/cart/addPresetCv'), array('confirm'=>'This will clear any current cart items, contine?',
-	'class'=>'button')); 
 
-echo CHtml::link('Generate C.V', array(
+
+<?php echo CHtml::link('Generate C.V', array(
 	'/cv/index'), array('class'=>'button')); ?> 
 
 
@@ -33,11 +31,8 @@ $this->widget('zii.widgets.CListView', array(
 
 <?php echo CHtml::link('Remove everything',array(
 	'/cart/empty', 'empty'=>'true'),array('confirm'=>'This will remove everything from your cart, contine?',
-	'class'=>'button'));  
+	'class'=>'button')); ?> 
 	
-echo CHtml::link('Add actual CV skills to cart', array(
-	 '/cart/addPresetCv'), array('confirm'=>'This will clear any current cart items, contine?',
-	'class'=>'button')); 
 
-echo CHtml::link('Generate C.V', array(
-	'/cv/index'), array('class'=>'button')); ?>
+<?php echo CHtml::link('Generate C.V', array(
+	'/cv/index'), array('class'=>'button')); ?> 	

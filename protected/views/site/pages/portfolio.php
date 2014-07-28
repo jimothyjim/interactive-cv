@@ -20,15 +20,13 @@ $this->breadcrumbs=array(
 		This website was created completely from scratch. The goal was to create a clean and simple website that 
 		could be used for advertising and for customer feedback. A few areas with Lorem Ipsum remain where the 
 		relevant information was not provided to me. 
-		<?php echo CHtml::link('It can be viewed here','http://spfreeman.net/stenlakes', array('target'=>'_blank')); ?>
-	</p>
+		<?php echo CHtml::link('It can be viewed here','http://spfreeman.net/stenlakes', array('target'=>'_blank')); ?>. </p>
 </div>
 <div class="portfolioSegment"> 
 	<h2>University Dissertation</h2>
 	<p> 
 		This Dissertation was my final project for university. It included a research, design, implementation, and review section.
 		The goal was to create a website where gamers could schedule events.
-		<?php echo CHtml::link('Viewable in PDF form here',yii::app()->getBaseUrl() .'/public/downloads/dissertation.pdf',
-		array('target'=>'_blank'));?>
-	.</p>
+		<?php echo CHtml::link('Viewable in PDF form here',yii::app()->getBaseUrl() .'/downloads/project.pdf',
+		array('target'=>'_blank'));?>. pologies for some layout issues, I don't currently have access to Microsoft Office. Contents page is accurate.</p>
 </div>
