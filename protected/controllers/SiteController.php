@@ -87,7 +87,7 @@ class SiteController extends Controller
 			
 			
 			$skillIdArray = explode("-", $_GET['skills']);
-			echo "blah";
+			
 
 			Yii::app()->session['cartSkills']=$skillIdArray;
 			Yii::app()->session['cartSkillsRealCv']=$skillIdArray;
