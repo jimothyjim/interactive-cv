@@ -21,11 +21,6 @@ or even
  for this site.
 </p>
 <p>
-	Due to the time constraints needed to create this in time for the application deadline, some areas are lacking a little polish.
-	Despite this, all the necessary functionality is in place and great care was taken to avoid any bugs. I will continue to improve
-	this site, and add new skills for a while after sending in my application, consider this a working beta.
-</p>
-<p>
 	To speed things up, I have made these quick add functions.
 </p>
 <?php 

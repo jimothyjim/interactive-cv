@@ -187,11 +187,26 @@ class CartController extends Controller
 	}
 	
 	/**
-	 * This fills the cart with skills used in my actual CV
+	 * This fills the cart with skills used in my actual CV. The actual CV is different depending on what 
+	 * web link they used to first access the site. See SiteController/Incoming for more.
 	 */
 	public function actionAddPresetCv()
 	{
-	      $skillIdArray = array(34,35,36,37,38,39,40,41,42,43,44,45,46);
+	
+	if(!isset(Yii::app()->session['cartSkills']))
+	{
+		Yii::app()->session['cartSkills']= array();
+	}
+	
+	if(isset(Yii::app()->session['cartSkillsRealCv']))
+	{
+		$skillIdArray = Yii::app()->session['cartSkillsRealCv'];
+	}
+
+	else
+	{
+	      $skillIdArray = array(34,35,36,37,39,40,41,42,43,44,45,46,47);    
+	}
 	      Yii::app()->session['cartSkills']=$skillIdArray;
 	      $this->redirect(array('index','justAdded'=>'multiple'));
 	}

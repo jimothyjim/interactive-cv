@@ -1,6 +1,6 @@
 #-README-
 ##--Introduction--
-This is the source code for the site I created specifically for the Toolstation job application. The site is powered by Yii framework and these files have been included here for reference and ease of access, though 
+This is the source code for my interactive CV portfolio. The site is powered by Yii framework and these files have been included here for reference and ease of access, though 
 some senstitive items like config have been removed. The idea of this site is somewhat superfluous and is currently more of a tech demo than a product intended for real world use. The site is used to create
 a database of skills which can then be browsed by an end user, who then picks the skills which are used to generate a CV. 
 
