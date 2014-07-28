@@ -6,7 +6,7 @@ class CartController extends Controller
 	 *Shows all the skills in the cart.
 	 *If something has been just added, or just removed then it passes the $skillChange array
 	 *to the the index so the user has confirmation that skill blah has been removed/added.
-	 *Also tells the user they emptied their cart
+	 *Also tells the user they emptied their cart.
 	 */
 	public function actionIndex()
 	{
