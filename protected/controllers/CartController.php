@@ -11,7 +11,7 @@ class CartController extends Controller
 	public function actionIndex()
 	{
 		$criteria=new CDbCriteria(array(
-			'order'=>'category DESC',
+			'order'=>'category DESC', 
 		));
 		
 		$criteria->addInCondition('skill_id', Yii::app()->session['cartSkills']);
