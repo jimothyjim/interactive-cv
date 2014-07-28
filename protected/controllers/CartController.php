@@ -208,7 +208,6 @@ class CartController extends Controller
 	      $skillIdArray = array(34,35,36,37,39,40,41,42,43,44,45,46,47);    
 	}
 	      Yii::app()->session['cartSkills']=$skillIdArray;
-	      var_dump(Yii::app()->session['cartSkillsRealCv']);
 	      $this->redirect(array('index','justAdded'=>'multiple'));
 	}
 
