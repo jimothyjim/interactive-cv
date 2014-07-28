@@ -71,6 +71,32 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
+	
+	/**
+	* Deals with people entering the site using their personalised CV link. This is for when a CV has been sent off
+	* with a shorterned url and the site needs to build a custom CV to match the one they've been sent.
+	*/
+	
+	public function actionIncoming()
+	{
+		//if skills are supplied then it 
+		if(isset($_GET['skills']))
+		{
+			Yii::app()->session['cartSkills']= array();
+			Yii::app()->session['cartSkillsRealCv']= array();
+			
+			
+			$skillIdArray = explode("-", $_GET['skills']);
+			echo "blah";
+			var_dump( $skillIdArray);
+			Yii::app()->session['cartSkills']=$skillIdArray;
+			Yii::app()->session['cartSkillsRealCv']=$skillIdArray;
+			var_dump(Yii::app()->session['cartSkillsRealCv']);
+		}
+		
+		$this->redirect(array('index'));
+	}
+		
 
 	/**
 	 * Displays the login page
