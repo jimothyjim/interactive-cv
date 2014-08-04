@@ -74,16 +74,19 @@ class SiteController extends Controller
 	
 	/**
 	* Deals with people entering the site using their personalised CV link. This is for when a CV has been sent off
-	* with a shorterned url and the site needs to build a custom CV to match the one they've been sent.
+	* with a shorterned url and the site needs to build a custom CV to match the one they've been sent.The url will contain a list of 
+	* the skill ids in the "skills" get parameter and optionally the name of the company in the "company" get parameter
 	*/
 	
 	public function actionIncoming()
 	{
-		//if skills are supplied then it 
+		//if skills are supplied then it explodes the string to an array and saves it as a session variable called cartSkillsRealCv
+		// Additionally it also fills the current cart with those skills.
 		if(isset($_GET['skills']))
 		{
 			Yii::app()->session['cartSkills']= array();
 			Yii::app()->session['cartSkillsRealCv']= array();
+			
 			
 			
 			$skillIdArray = explode("-", $_GET['skills']);
@@ -92,6 +95,16 @@ class SiteController extends Controller
 			Yii::app()->session['cartSkills']=$skillIdArray;
 			Yii::app()->session['cartSkillsRealCv']=$skillIdArray;
 
+		}
+		
+		//Sets company session variables. This is used 
+		//for extra bits of customisation. Two variables are used, one for easier coding using - still,
+		//and one that has - symbols replaced with symbols for text friendly outputs.
+		if(isset($_GET['company']))
+		{
+			Yii::app()->session['company']= $_GET['company'];
+			$companyText = str_replace('-', ' ', $_GET['company']);
+			Yii::app()->session['companyText']= $companyText;
 		}
 		
 		$this->redirect(array('index'));

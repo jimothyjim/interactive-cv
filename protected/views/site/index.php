@@ -4,10 +4,17 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome To My (Simon Freeman) Portfolio Site!</h1>
+<h1>
+	<?php if(isset(Yii::app()->session['companyText']))
+		{
+			echo Yii::app()->session['companyText'] . ', ';
+		}
+	?>
+	Welcome To My (Simon Freeman) Portfolio Site!
+</h1>
 
 <p>
-	This site was created to supplement my CV and to showcase some of the things I've done. As this site was created
+	This site was created to supplement my CV and to showcase some of the things I've done. The skills cart automatically contains my correct CV skills to get you started. As this site was created
 	as a showcase, some of the features are a bit superflous. Some design choices were made to ensure I could recreate CVs I have personally written. Feel free to browse
 	<?php echo CHtml::link('my skills,',array('/skill/index'));?>
 	 
