@@ -7,18 +7,15 @@ $this->pageTitle=Yii::app()->name;
 <h1>Welcome To My (Simon Freeman) Portfolio Site!</h1>
 
 <p>
-	This site was created to supplement my C.V and to showcase some of the things I've done. As this site was created
-	as a showcase, some of the features are a bit superflous. I can also assure you I didn't use this to write my actual
-	application! Some design choices were made to make sure I could at least generate a web version of the C.V I wrote, and while technically
-	functional, other generated C.Vs may be somewhat lacking in the writing departmernt. Please feel free to generate
-	a C.V based on 
+	This site was created to supplement my CV and to showcase some of the things I've done. As this site was created
+	as a showcase, some of the features are a bit superflous. Some design choices were made to ensure I could recreate CVs I have personally written. Feel free to browse
 	<?php echo CHtml::link('my skills,',array('/skill/index'));?>
 	 
-	or check out
+	and use them to generate a different CV, or check out 
 <?php echo CHtml::link('my portfolio,',array('page','view'=>'portfolio')) ?>
-or even 
+ or even 
 <?php echo CHtml::link('view all the non-sensitive source code','https://github.com/jimothyjim/toolstation', array('target'=>'_blank')); ?>	
- for this site.
+ for this site. If you modified the CV, the "Add actual CV skills to cart" button will always reset the cart to hold the skills that create the CV tailored to you.
 </p>
 <p>
 	To speed things up, I have made these quick add functions.
