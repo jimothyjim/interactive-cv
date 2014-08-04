@@ -28,5 +28,5 @@ $this->breadcrumbs=array(
 		This Dissertation was my final project for university. It included a research, design, implementation, and review section.
 		The goal was to create a website where gamers could schedule events.
 		<?php echo CHtml::link('Viewable in PDF form here',yii::app()->getBaseUrl() .'/downloads/project.pdf',
-		array('target'=>'_blank'));?>. pologies for some layout issues, I don't currently have access to Microsoft Office. Contents page is accurate.</p>
+		array('target'=>'_blank'));?>. Apologies for some layout issues, I don't currently have access to Microsoft Office. Contents page is accurate.</p>
 </div>
