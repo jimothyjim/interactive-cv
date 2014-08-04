@@ -9,9 +9,7 @@ $this->breadcrumbs=array(
 <h1> Simon Freeman </h1>
 <p> Contact Details Redacted for Online C.V </p>	
 <p>
-	An enthusiastic Internet Computing graduate from the University of Glamorgan, willing to relocate for a career in development. 
-	Combining a talent for problem solving with an ability to communicate effectively, programming within a team is a natural fit.
-	Online portfolio available at www.spfreeman.net
+	<?php echo $cvOpening[0]->opening_text; ?>
 </p>
 <?php 
 $education='';
