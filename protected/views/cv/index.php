@@ -4,8 +4,19 @@
 $this->breadcrumbs=array(
 	'Cv',
 );
+
 ?>
 <div id ="cv">
+<?php
+	echo CHtml::link('Create link', array(
+	 '/Cv/linkCreate'), array('class'=>'button'));
+	 echo '<br / >';
+	 if(isset($cvLink))
+	 {
+		echo '<p class = "important">Link this cv using: <br />' . $cvLink . '</p>';
+	 }
+?>
+	 
 <h1> Simon Freeman </h1>
 <p> Contact Details Redacted for Online C.V </p>	
 <p>
